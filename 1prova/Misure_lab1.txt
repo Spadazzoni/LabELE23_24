@@ -1,0 +1,101 @@
+MISURE PER LA CALIBRAZIONE:
+
+-Oscilloscopio -> Fondo scala
+1)104.0 mV -> 20 mV
+2)200.0 mV -> 50 mV
+3)270.0 mV -> 50 mV
+4)360.0 mV -> 100 mV
+5)500.0 mV -> 100 mV
+6)560.0 mV -> 100 mV
+7)660.0 mV -> 100 mV
+8)760.0 mv -> 200 mV
+9)800.0 mV -> 200 mV
+
+-Multimetro
+1)100.0 mV
+2)192.8 mV
+3)262.1 mV
+4)348.0 mV
+5)483.4 mV
+6)542.1 mV
+7)640.0 mV -> Abbiamo cambiato da mV a V
+8)730.0 mV
+9)772.0 mV
+
+
+MISURE PER LA CARATTERISTICA SILICIO:
+
+-Oscilloscopio
+1)400 mV -> 100 mV
+2)460 mV -> 100 mV
+3)500 mV -> 100 mV
+4)520 mV -> 100 mV
+5)540 mV -> 100 mV
+6)560 mV -> 100 mV
+7)580 mV -> 100 mV
+8)600 mV -> 100 mv
+9)620 mV -> 100 mV
+10)640 mV -> 100 mV
+11)660 mV -> 100 mV
+12)680 mV -> 200 mV
+13)720 mV -> 200 mV
+14)760 mV -> 200 mV
+15)800 mV -> 200 mV
+
+-Multimetro
+1)10 uA
+2)20 uA
+3)50 uA
+4)80 uA
+5)120 uA
+6)180 uA
+7)270 uA
+8)430 uA
+9)630 uA
+10)980 uA
+11)1.53 mA
+12)1.67 mA
+13)3.64 mA
+14)7.89 mA
+15)15.24 mA
+
+
+MISURE PER LA CARATTERISTICA GERMANIO:
+
+-Oscilloscopio
+1)44 mV -> 10 mV
+2)100 mV -> 50 mV
+3)130 mV -> 50 mV
+4)160 mV -> 50 mV
+4 bis)180 mV -> 50 mV
+5)210 mV -> 50 mV
+6)240 mV -> 50 mV
+7)270 mV -> 50 mV
+7 bis) 290 mV -> 50 mV
+8)310 mV -> 50 mV
+9)340 mV -> 50 mV
+10)380 mV -> 100 mV
+11)400 mV -> 100 mV
+12)420 mV -> 100 mV
+13)440 mV -> 100 mV
+
+-Multimetro
+1)10 uA
+2)20 uA
+3)50 uA
+4)90 uA
+4 bis)140 uA
+5)240 uA
+6)400 uA
+7)670 uA
+7 bis)920 uA
+8)1.25 mA
+9)1.96 mA
+10)2.82 mA
+11)3.74 mA
+12)4.78 mA
+13)6.03 mA
+
+
+
+

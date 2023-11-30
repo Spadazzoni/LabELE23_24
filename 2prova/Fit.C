@@ -13,7 +13,6 @@ void Fit(Double_t const Vmin, Double_t const Vmax) {
   std::fstream in2;
   in1.open("Car200uA.txt");
   in2.open("Car100uA.txt");
-  std::cout << "1" << '\n';
   TGraphErrors *g1 = new TGraphErrors();
   TGraphErrors *g2 = new TGraphErrors();
   TCanvas *c = new TCanvas();
@@ -24,7 +23,6 @@ void Fit(Double_t const Vmin, Double_t const Vmax) {
   Double_t ErrV;
   Int_t i = 0;  // indice file 1
   Int_t j = 0;  // indice file 2
-  std::cout << "2" << '\n';
   while (1) {
     if (!in1.good()) {
       break;
@@ -38,7 +36,6 @@ void Fit(Double_t const Vmin, Double_t const Vmax) {
     g1->SetPointError(i, ErrV, ErrI);
     ++i;
   }
-  std::cout << "3" << '\n';
   in1.close();
   while (1) {
     if (!in2.good()) {
@@ -53,16 +50,13 @@ void Fit(Double_t const Vmin, Double_t const Vmax) {
     g2->SetPointError(j, ErrV, ErrI);
     ++j;
   }
-  std::cout << "3 e mezzo" << '\n';
   in2.close();
-  std::cout << "4" << '\n';
   TF1 *f1 = new TF1("f1", "x/[0]-[1]", Vmin, Vmax);
   TF1 *f2 = new TF1("f2", "x/[0]-[1]", Vmin, Vmax);
   f1->SetLineColor(kBlue);
   f2->SetLineColor(kRed);
   g1->Fit(f1, "qs0");
   g2->Fit(f2, "qs0");
-  std::cout << "5" << '\n';
   g1->SetMarkerStyle(kOpenCircle);
   g2->SetMarkerStyle(kOpenCircle);
   auto *mg = new TMultiGraph();

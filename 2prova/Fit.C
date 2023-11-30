@@ -64,5 +64,4 @@ void Fit(Double_t const Vmin, Double_t const Vmax) {
   mg->Add(g2);
   mg->SetTitle("Caratteristica I-V del transistor in regione attiva; V (udm); I (udm)");
   mg->Draw("ape");
-  std::cout << "" << '\n';
 }

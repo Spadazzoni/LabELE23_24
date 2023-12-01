@@ -34,7 +34,7 @@ void carGe()
     // heta = 1 Ge, 2 Si; Vt = 26 mV a 300 K
     f->SetMarkerStyle(kOpenSquare);
     g->Fit(f, "qs0");
-    g->SetTitle("Caratteristica I-V del diodo al -Si/Ge-");
+    g->SetTitle("Caratteristica I-V del diodo al -Ge-");
     g->GetHistogram()->GetXaxis()->SetTitle("V (udm)");
     g->GetHistogram()->GetYaxis()->SetTitle("I (udm)");
     g->Draw("ape");

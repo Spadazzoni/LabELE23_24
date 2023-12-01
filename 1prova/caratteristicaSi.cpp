@@ -19,7 +19,7 @@ void carSi()
         in1 >> x >> r >> y;
         N = g->GetN();
         errx = 0; // sqrt(2 * (r / 10) * (r / 10) + (x * 0.03) * (x * 0.03));
-        erry = 0; // y * 0.015;
+        erry = y * 0.015;
         if (!in1.good())
         {
             break;

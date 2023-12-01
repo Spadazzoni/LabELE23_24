@@ -1,0 +1,8 @@
+Rinominare file:
+git mv file_name new_file_name
+
+Fetch->Scarica i dati senza merge:
+git fetch origin master
+
+Pull->Scarica i dati e fa il merge:
+git pull origin master

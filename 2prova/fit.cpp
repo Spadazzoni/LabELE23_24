@@ -20,8 +20,8 @@ void Fit(Double_t const Vmin, Double_t const Vmax)
   Double_t I;
   Double_t V;
   Double_t fs; // fondoscala
-  Double_t ErrI;
-  Double_t ErrV;
+  Double_t ErrI = 0;
+  Double_t ErrV = 0;
   Int_t i = 0; // indice file 1
   Int_t j = 0; // indice file 2
   while (1)
@@ -58,16 +58,16 @@ void Fit(Double_t const Vmin, Double_t const Vmax)
     ++j;
   }
   in2.close();
-  TF1 *f1 = new TF1("f1", "x/[0]-[1]", Vmin, Vmax);
-  f1->SetParameters(2, -20);
-  TF1 *f2 = new TF1("f2", "x/[0]-[1]", Vmin, Vmax);
-  f2->SetParameters(2, -20);
+  TF1 *f1 = new TF1("f1", "x*[0]+[1]", Vmin, Vmax);
+  // f1->SetParameters(5,30);
+  TF1 *f2 = new TF1("f2", "x*[0]+[1]", Vmin, Vmax);
+  // f2->SetParameters(5,30);
   f1->SetLineColor(kBlue);
   f2->SetLineColor(kRed);
   g1->Fit(f1, "qs0");
   g2->Fit(f2, "qs0");
   g1->SetMarkerStyle(kOpenCircle);
-  g2->SetMarkerStyle(kOpenCircle);
+  g2->SetMarkerStyle(kOpenSquare);
   auto *mg = new TMultiGraph();
   mg->Add(g1);
   mg->Add(g2);

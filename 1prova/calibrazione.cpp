@@ -4,12 +4,14 @@
 #include "TGraphErrors.h"
 #include "TH1.h"
 #include "TStyle.h"
+#include "TLegend.h"
 #include <fstream>
 
 void cal()
 {
   gStyle->SetOptFit(1111);
   TCanvas *c = new TCanvas("c", "MyCanvas", 200, 200, 1000, 600);
+  c->SetGrid();
   TGraphErrors *g = new TGraphErrors();
   g->SetMarkerStyle(kOpenCircle);
   std::ifstream in1;
@@ -20,8 +22,8 @@ void cal()
   {
     in1 >> x >> r >> y;
     N = g->GetN();
-    errx = 0; // sqrt(2 * (r / 10) * (r / 10) + (x * 0.03) * (x * 0.03));
-    erry = 0; // y * 0.015;
+    errx = sqrt(2 * (r / 10) * (r / 10) + (x * 0.03) * (x * 0.03));
+    erry = y * 0.003 + 0.1;
     if (!in1.good())
     {
       break;
@@ -33,10 +35,18 @@ void cal()
   in1.close();
   TF1 *f = new TF1("f", "[0]+[1]*x", 80, 820);
   f->SetParameters(0, 1);
-  g->Fit(f, "QS0");
+  f->SetParNames("q", "m");
+  g->Fit(f, "rQS0");
+  g->SetMarkerStyle(8);
+  // Legenda dei punti e del fit
+  TLegend *leg = new TLegend(0.11, 0.75, 0.5, 0.89);
+  leg->AddEntry(g, "Punti sperimentali");
+  leg->AddEntry(f, "Fit lineare");
+  gStyle->SetOptStat();
   g->SetTitle("Calibrazione dell'oscilloscopio");
-  g->GetHistogram()->GetXaxis()->SetTitle("V_{m} (udm)");
-  g->GetHistogram()->GetYaxis()->SetTitle("V_{o} (udm)");
+  g->GetHistogram()->GetXaxis()->SetTitle("V_{m} (mV)"); // i dati della calibrazione sono tutti presi in mV
+  g->GetHistogram()->GetYaxis()->SetTitle("V_{o} (mV)");
   g->Draw("ape");
+  leg->Draw("same");
   f->Draw("same");
 }

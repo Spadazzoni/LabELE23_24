@@ -9,7 +9,6 @@
 
 void cal()
 {
-  gStyle->SetOptFit(1111);
   TCanvas *c = new TCanvas("c", "MyCanvas", 200, 200, 1000, 600);
   c->SetGrid();
   TGraphErrors *g = new TGraphErrors();
@@ -36,7 +35,7 @@ void cal()
   TF1 *f = new TF1("f", "[0]+[1]*x", 80, 820);
   f->SetParameters(0, 1);
   f->SetParNames("q", "m");
-  g->Fit(f, "rQS0");
+  g->Fit(f, "rS0");
   g->SetMarkerStyle(8);
   // Legenda dei punti e del fit
   TLegend *leg = new TLegend(0.11, 0.75, 0.5, 0.89);
@@ -49,4 +48,5 @@ void cal()
   g->Draw("ape");
   leg->Draw("same");
   f->Draw("same");
+  c->SaveAs("Calibrazione.pdf");
 }
